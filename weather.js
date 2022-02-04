@@ -1,21 +1,59 @@
-// const API_KEY = "20d3ea9ebdb399b0edf375ee7d5085c0";
+const API_KEY = "20d3ea9ebdb399b0edf375ee7d5085c0";
+const body = document.querySelector("body");
+let weather = ["Clear", "Cloud", "Rain", "Snow", "Windy"];
 
 // function geoGood(position) {
-//     const lat = position.coords.latitude; //위도 설정
-//     const lon = position.coords.longitude; //경도 설정
-//     const url = `http://api.openweathermap.org/data/2.5/weather?lat=
-//                 ${lat}&lon=${lon}&appid=${API_KEY}&units=metric`; //API 통해서 날씨정보 가져옴
+//     const lat = position.coords.latitude;
+//     const lon = position.coords.longitude;
+//     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    
 //     fetch(url)
 //     .then(response => response.json())
 //     .then(data => {
-//             const weather = document.querySelector(".state");
-//             const city = document.querySelector(".city");
-//         city.innerText = data.name; 
-//         weather.innerText = `${data.weather[0].main} ${data.main.temp}`;
+//         console.log(data);
+//         weather = data.weather;
+//         comeWeather();
 //     });
 // }
 // function geoError() {
-//     alert("Can't find you. Where?");//위치정보를 불러오지 못했을 때
+//     alert("Can't find you. Where?");
 // }
 
-// navigator.geolocation.getCurrentPosition(geoGood, geoError);  
+// navigator.geolocation.getCurrentPosition(geoGood, geoError);
+
+const comeWeather = () => {weather.map((key, value) => {
+    const weatherKey = key;
+    console.log(weatherKey);
+    const h1 = document.createElement("h1");
+    body.appendChild(h1);
+    const imgTag = new Image();
+
+    if(weatherKey === "Clear") {
+
+        h1.innerText = "Clear";
+        imgTag.src = "./img/sunny.png";
+        body.appendChild(imgTag);
+    }
+    if(weatherKey === "Cloud") {
+        h1.innerText = "Cloud";
+        imgTag.src = "./img/cloud.png";
+        body.appendChild(imgTag);
+    }
+    if(weatherKey === "Rain") {
+        h1.innerText = "Rain";
+        imgTag.src = "./img/rain.png";
+        body.appendChild(imgTag);
+    }
+    if(weatherKey === "Snow") {
+        h1.innerText = "Snow";
+        imgTag.src = "./img/snow.png";
+        body.appendChild(imgTag);
+    }
+    if(weatherKey === "Windy") {
+        h1.innerText = "Windy";
+        imgTag.src = "./img/wind.png";
+        body.appendChild(imgTag);
+    }
+})};
+
+comeWeather();
