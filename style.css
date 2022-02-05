@@ -1,0 +1,14 @@
+h1 {
+    width: 100px;
+}
+
+img {
+    width:64px;
+    height: 64px;
+}
+
+.container {
+    display: flex;
+    
+    justify-content: center;
+}

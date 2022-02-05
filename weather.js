@@ -1,5 +1,5 @@
 const API_KEY = "20d3ea9ebdb399b0edf375ee7d5085c0";
-const body = document.querySelector("body");
+const div = document.querySelector("div");
 let weather = "";
 
 function geoGood(position) {
@@ -18,33 +18,33 @@ function geoGood(position) {
             const weatherKey = key;
             console.log(weatherKey);
             const h1 = document.createElement("h1");
-            body.appendChild(h1);
+            div.appendChild(h1);
             const imgTag = new Image();
             
             if(weatherKey.main === "Clear") {
                 h1.innerText = "Clear";
                 imgTag.src = "./img/sunny.png";
-                body.appendChild(imgTag);
+                div.appendChild(imgTag);
                 }
             if(weatherKey === "Cloud") {
                 h1.innerText = "Cloud";
                 imgTag.src = "./img/cloud.png";
-                body.appendChild(imgTag);
+                div.appendChild(imgTag);
             }
             if(weatherKey === "Rain") {
                 h1.innerText = "Rain";
                 imgTag.src = "./img/rain.png";
-                body.appendChild(imgTag);
+                div.appendChild(imgTag);
             }
             if(weatherKey === "Snow") {
                 h1.innerText = "Snow";
                 imgTag.src = "./img/snow.png";
-                body.appendChild(imgTag);
+                div.appendChild(imgTag);
             }
             if(weatherKey === "Wind") {
                 h1.innerText = "Wind";
                 imgTag.src = "./img/wind.png";
-                body.appendChild(imgTag);
+                div.appendChild(imgTag);
             }
         
             
