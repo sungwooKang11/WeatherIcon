@@ -22,14 +22,15 @@ let weather = ["Clear", "Cloud", "Rain", "Snow", "Windy"];
 // navigator.geolocation.getCurrentPosition(geoGood, geoError);
 
 const comeWeather = () => {weather.map((key, value) => {
+    console.log(value);
     const weatherKey = key;
     console.log(weatherKey);
     const h1 = document.createElement("h1");
     body.appendChild(h1);
     const imgTag = new Image();
-
+    
+    
     if(weatherKey === "Clear") {
-
         h1.innerText = "Clear";
         imgTag.src = "./img/sunny.png";
         body.appendChild(imgTag);
@@ -54,6 +55,8 @@ const comeWeather = () => {weather.map((key, value) => {
         imgTag.src = "./img/wind.png";
         body.appendChild(imgTag);
     }
+
+
 })};
 
 comeWeather();
